@@ -28,9 +28,9 @@ function renderMovies() {
   <button class="small del" data-action="delete">Eliminar</button>
 </div>
 
-    `;
-
   movieList.appendChild(li);
+
+  `;
 
   }
 }
@@ -85,21 +85,19 @@ addBtn.addEventListener("click", addMovie);
 deleteBtn.addEventListener("click", () => alert("Se implementa en rama eliminar"));
 editBtn.addEventListener("click", () => alert("Se implementa en rama editar"));
 
-movieList.addEventListener("click", (e)) => {
+movieList.addEventListener("click", (e) => {
   const btn = e.target.closest("button");
-  if (!btn) { return; }
+  if (!btn) return;
 
   const li = e.target.closest("li.item");
-  if (!li) { return; }
+  if (!li) return;
 
   const id = Number(li.dataset.id);
 
-  if (btn.dataset.action === "delete") {
-    deleteMovieById(id);
-    if (btn.dataset.action === "edit") {
-      editMovieById(id);
-    }
-  }
+  if (btn.dataset.action === "delete") deleteMovieById(id);
+  if (btn.dataset.action === "edit") editMovieById(id);
+});
 
 
-  renderMovies();
+
+renderMovies();
