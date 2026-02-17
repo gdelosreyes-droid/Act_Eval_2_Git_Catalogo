@@ -17,9 +17,10 @@ function renderMovies() {
         <span class="badge">${m.year}</span>
       </div>
       <div class="actions">
-        <button class="small del" data-action="delete">Eliminar</button>
-        <button class="small edt" data-action="edit">Editar</button>
-      </div>
+  <button class="small edt" data-action="edit">Editar</button>
+  <button class="small del" data-action="delete">Eliminar</button>
+</div>
+
 
 
   }
