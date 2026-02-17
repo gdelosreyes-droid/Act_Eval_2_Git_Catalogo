@@ -17,12 +17,13 @@ function renderMovies() {
         <span class="badge">${m.year}</span>
       </div>
       <div class="actions">
-        <button class="small del" data-action="delete">Eliminar</button>
         <button class="small edt" data-action="edit">Editar</button>
       </div>
+    `;
 
 
-  }
+    movieList.appendChild(li);
+}
 
 function addMovie() {
   const title = titleInput.value.trim();
@@ -61,12 +62,6 @@ function editMovieById(id) {
 }
 
 
-function deleteMovieById(id) {
-  movies = movies.filter(m => m.id !== id);
-  renderMovies();
-}
-
-
 // Solo funciona añadir al inicio
 addBtn.addEventListener("click", addMovie);
 
@@ -83,8 +78,6 @@ movieList.addEventListener("click", (e) => {
 
   const id = Number(li.dataset.id);
 
-  if (btn.dataset.action === "delete") {
-    deleteMovieById(id);
   if (btn.dataset.action === "edit") {
     editMovieById(id);
   }
