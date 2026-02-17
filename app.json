@@ -11,7 +11,14 @@ let movies = [];
 let nextId = 1;
 
 function renderMovies() {
-  li.innerHTML = `
+  movieList.innerHTML = "";
+
+  for (const m of movies) {
+    const li = document.createElement("li");
+    li.className = "item";
+    li.dataset.id = String(m.id);
+
+    li.innerHTML = `
       <div>
         <strong>${m.title}</strong>
         <span class="badge">${m.year}</span>
@@ -22,8 +29,8 @@ function renderMovies() {
 </div>
 
 
-
   }
+}
 
 function addMovie() {
   const title = titleInput.value.trim();
