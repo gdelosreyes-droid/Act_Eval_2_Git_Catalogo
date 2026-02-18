@@ -28,9 +28,10 @@ function renderMovies() {
   <button class="small del" data-action="delete">Eliminar</button>
 </div>
 
-  movieList.appendChild(li);
 
   `;
+
+    movieList.appendChild(li);
 
   }
 }
